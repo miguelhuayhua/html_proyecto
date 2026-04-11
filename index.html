@@ -16,6 +16,8 @@
     <style type="text/tailwindcss">
         @theme {
             --font-oswald: 'Oswald';
+            --color-primary: #005a19;
+            --color-secondary: #00c728;
         }
     </style>
 
@@ -24,7 +26,7 @@
 <body>
     <div>
         <header>
-            <nav class="grid grid-cols-2 bg-gradient-to-r from-green-700 py-3 to-green-300  ">
+            <nav class="grid grid-cols-2 text-primary bg-gradient-to-r from-primary py-3 to-secondary  ">
                 <div class="px-5">
                     <ul class="flex h-full items-center gap-4 text-white text-xl font-oswald">
                         <li>
@@ -33,7 +35,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="">
+                            <a href="https://facebook.com">
                                 Sobre nosotros
                             </a>
                         </li>
@@ -48,21 +50,21 @@
                 </div>
 
                 <div class="flex justify-end px-5">
-                    <img src="logo.png" class="h-20" alt="Logo">
+                    <img src="logo2.png" class="h-13" alt="Logo">
                 </div>
             </nav>
 
             <img src="fondo.png" class="absolute w-full -z-1 " alt="Fondo de página web">
 
 
-            <div class="w-1/2 ">
+            <div class="w-1/2 pt-20 pl-10 flex flex-col gap-7">
                 <h1 class="text-5xl font-semibold text-white ">
                     Soccer Game
                 </h1>
-                <h2 class="text-3xl text-white">
+                <h2 class="text-3xl text-white font-oswald font-thin">
                     Nuestro Proyecto
                 </h2>
-                <p class="leading-7 text-white traking-wide text-justify px-5">
+                <p class="leading-7 text-white traking-wide text-justify">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum soluta, totam possimus dolore,
                     perferendis explicabo maxime ex dolor, autem corrupti facere dolores voluptas esse earum quod
                     cumque.
@@ -80,16 +82,27 @@
                     </button>
                 </div>
 
-                <input type="text">
+                <div tabindex="0" class="flex transition-all focus-within:outline-4 focus-within:outline-secondary w-full bg-white rounded-full p-2">
+
+                    <div class="w-11/12 after:bg-gradient-to-r after:from-primary after:to-secondary after:w-full after:h-px after:content-[''] after:block ">
+                        <input class="focus:outline-none w-full">
+                    </div>
+
+                    <div class="w-1/12">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0"/></g></svg>
+                    </div>
+                </div>
 
             </div>
-            <div class="bg-white   w-15 rounded-s-2xl p-4 flex flex-col gap-2 fixed right-0 top-40">
-                <a href="https://facebook.com/mi-pagina-de-facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <div class="bg-white text-white w-fit rounded-s-[40px] p-4 flex flex-col gap-2 fixed right-0 top-40">
+                <a class="bg-gradient-to-r rounded-full from-primary to-secondary p-1"
+                    href="https://facebook.com/mi-pagina-de-facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
                             d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
                     </svg>
                 </a>
+
                 <a href="https://facebook.com/mi-pagina-de-facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="currentColor"
@@ -128,7 +141,10 @@
                         <h3>
                             Llena el siguiente formulario
                         </h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18.517 4.903c-1.271-1.12-2.966-1.074-4.423-.526c-1.155.435-1.891 1.19-2.32 2.113c-.306.661-.446 1.389-.498 2.112C8.9 8.459 6.811 7.276 5.411 5.31a.75.75 0 0 0-.652-.313c-.307.016-.532.22-.666.481q-.046.088-.12.246a10 10 0 0 0-.354.875c-.255.73-.519 1.756-.53 2.904c-.012 1.154.233 2.446 1.007 3.676c.599.95 1.494 1.832 2.769 2.578c-1.227.672-2.447 1.052-3.836.998a.75.75 0 0 0-.39 1.407c3.105 1.7 6.555 2.323 9.602 1.435c4.96-1.449 7.853-6.09 7.873-11.001q.044-.1.137-.285q.105-.211.238-.467q.12-.23.258-.504c.364-.719.818-1.65.981-2.31a.75.75 0 0 0-1.06-.853c-.612.302-1.193.462-1.859.645z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M18.517 4.903c-1.271-1.12-2.966-1.074-4.423-.526c-1.155.435-1.891 1.19-2.32 2.113c-.306.661-.446 1.389-.498 2.112C8.9 8.459 6.811 7.276 5.411 5.31a.75.75 0 0 0-.652-.313c-.307.016-.532.22-.666.481q-.046.088-.12.246a10 10 0 0 0-.354.875c-.255.73-.519 1.756-.53 2.904c-.012 1.154.233 2.446 1.007 3.676c.599.95 1.494 1.832 2.769 2.578c-1.227.672-2.447 1.052-3.836.998a.75.75 0 0 0-.39 1.407c3.105 1.7 6.555 2.323 9.602 1.435c4.96-1.449 7.853-6.09 7.873-11.001q.044-.1.137-.285q.105-.211.238-.467q.12-.23.258-.504c.364-.719.818-1.65.981-2.31a.75.75 0 0 0-1.06-.853c-.612.302-1.193.462-1.859.645z" />
+                        </svg>
                         <form action="">
                             <input type="text" class="border">
                             <input type="text" class="border">
