@@ -2,6 +2,8 @@
 
 const contenedorDatos = document.getElementById("contenedor");
 const contenedorPartidos = document.getElementById("contenedor-partidos");
+const contenedorJugadorPrincipal = document.getElementById("jugador-especial")
+
 
 fetch('https://ysmgcapyfdzdpagzkcgo.supabase.co/functions/v1/clase_html_api', {
     method: 'POST',
@@ -14,6 +16,7 @@ fetch('https://ysmgcapyfdzdpagzkcgo.supabase.co/functions/v1/clase_html_api', {
 }).then(datos => {
 
     let { jugadores, partidos } = datos;
+    let jugadores_ref = datos.jugadores;
     //creación de los jugadores
     jugadores.splice(0, 4).forEach(function (jugador) {
         let tarjeta = document.createElement("div");
@@ -41,8 +44,24 @@ fetch('https://ysmgcapyfdzdpagzkcgo.supabase.co/functions/v1/clase_html_api', {
 
 
 
+
+    let jugadorPrincipal = jugadores_ref.at(0)
+    let tarjetaPrincipal = document.createElement("div");
+    let imgPrincipal = document.createElement("img");
+    let h3Principal = document.createElement("h3");
+    let pPrincipal = document.createElement("p");
+
+    imgPrincipal.src = jugadorPrincipal.fotografia;
+    h3Principal.textContent = jugadorPrincipal.nombre;
+    pPrincipal.textContent = jugadorPrincipal.nacimiento;
     //creación de partidos
 
+    tarjetaPrincipal.appendChild(imgPrincipal);
+    tarjetaPrincipal.appendChild(h3Principal);
+    tarjetaPrincipal.appendChild(pPrincipal);
+    tarjetaPrincipal.className = "flex w-sm rounded-lg overflow-hidden flex-col bg-white"
+    h3Principal.className = "font-bold"
+    contenedorJugadorPrincipal.appendChild(tarjetaPrincipal)
 
     partidos.forEach(partido => {
         const { equipos, estadium, fecha } = partido;
@@ -87,8 +106,8 @@ formulario.addEventListener("submit", (evento) => {
     let datos = new FormData(formulario);
     let mensaje = datos.get('mensaje')
     let nombre = datos.get('nombre');
-    console.log("Mi mensaje: " , mensaje)
-    console.log("Mi nombre: " , nombre)
+    console.log("Mi mensaje: ", mensaje)
+    console.log("Mi nombre: ", nombre)
 
 
 })
